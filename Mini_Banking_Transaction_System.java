@@ -1,3 +1,5 @@
+// Level - 1 (POC) Proof Of Concept
+
 import java.util.*;
 
 class Mini_Banking_Transaction_System
@@ -34,8 +36,7 @@ class Mini_Banking_Transaction_System
 	}
 	
 	static boolean loanEligibility(double balance,double monthly_Income){
-		boolean eligibility = (balance>=10000 && monthly_Income>=25000);
-		return eligibility;
+		return balance>=10000 && monthly_Income>=25000;
 	}
 	
 	static void displayAccountDetails(String name, int accountNumber, double balance){
@@ -44,7 +45,7 @@ class Mini_Banking_Transaction_System
 		System.out.println("Name : "+name);
 		System.out.println("Account Number : "+accountNumber);
 		System.out.println("Balance : "+balance);
-		System.out.println("================================");
+		System.out.println("===============================");
 	}
 	
 	public static void main(String [] args)
@@ -64,13 +65,13 @@ class Mini_Banking_Transaction_System
 		System.out.print("Enter the amount to deposit = ");
 		double amount = sc.nextDouble();
 		balance = obj.deposit(balance,amount);
-		System.out.print("Total Balance : "+balance);
+		System.out.println("Total Balance : "+balance);
 		
 		// WithDraw the amount from the account
 		System.out.print("Enter the amount to with-draw : ");
 		double withAmount = sc.nextDouble();
 		balance = obj.withdraw(balance,withAmount);
-		System.out.print("After with-draw Total Balance : "+balance);
+		System.out.println("After with-draw Total Balance : "+balance);
 		
 		// Check Balance
 		obj.balance(balance);
@@ -78,6 +79,7 @@ class Mini_Banking_Transaction_System
 		// Calculate the interest
 		System.out.print("Enter the Interest Rate : ");
 		double interest_rate = sc.nextDouble();
+		System.out.print("Enter the time :");
 		int time = sc.nextInt();
 		System.out.println(obj.calculateInterest(balance, interest_rate, time));
 		
